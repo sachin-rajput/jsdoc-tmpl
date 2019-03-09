@@ -4,6 +4,8 @@ JSDoc theme for [bookshelfjs.org](http://bookshelfjs.org).
 
 Forked from [bookshelf-jsdoc-theme](https://github.com/bookshelf/bookshelf-jsdoc-theme).
 
+Added ["githubLink"](https://github.com/sachin-rajput/jsdoc-tmpl#example-jsdoc-config) in opts 
+
 ## Uses
 
 - [the Taffy Database library](http://taffydb.com/)
