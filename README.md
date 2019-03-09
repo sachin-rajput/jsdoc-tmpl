@@ -2,7 +2,7 @@
 
 JSDoc theme for [bookshelfjs.org](http://bookshelfjs.org).
 
-Forked from [Minami](https://github.com/Nijikokun/minami).
+Forked from [bookshelf-jsdoc-theme](https://github.com/bookshelf/bookshelf-jsdoc-theme).
 
 ## Uses
 
@@ -12,7 +12,7 @@ Forked from [Minami](https://github.com/Nijikokun/minami).
 ## Install
 
 ```bash
-$ npm install --save-dev bookshelf-jsdoc-theme
+$ npm install --save-dev jsdoc-tmpl
 ```
 
 ## Usage
@@ -20,7 +20,7 @@ $ npm install --save-dev bookshelf-jsdoc-theme
 Clone repository to your designated `jsdoc` template directory, then:
 
 ```bash
-$ jsdoc entry-file.js -t path/to/bookshelf-jsdoc-theme
+$ jsdoc entry-file.js -t path/to/jsdoc-tmpl
 ```
 
 ### Styles
@@ -45,7 +45,7 @@ In your `.jsdoc.json` file, add a template option.
 
 ```json
 "opts": {
-  "template": "./node_modules/bookshelf-jsdoc-theme"
+  "template": "./node_modules/jsdoc-tmpl"
 }
 ```
 
@@ -74,8 +74,9 @@ In your `.jsdoc.json` file, add a template option.
     "encoding": "utf8",
     "private": true,
     "recurse": true,
-    "template": "./node_modules/bookshelf-jsdoc-theme"
-    "whitelist": ['Optional', 'List', 'Of', 'Top', 'Level', 'Classes']
+    "githubLink": "https://github.com/sachin-rajput/jsdoc-tmpl",
+    "template": "./node_modules/jsdoc-tmpl",
+    "whitelist": ['Optional', 'List', 'Of', 'Top', 'Level', 'Classes'],
     "changelog": './path-to/CHANGELOG.md',
     "title": "Bookshelf.js"
   }
