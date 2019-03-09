@@ -1,0 +1,61 @@
+.sidebar {
+  @media screen and (max-width: $screen-breakpoint) {
+    display: none;
+  }
+
+  background-color: $sidebar-background-color;
+  bottom: 0;
+  line-height: 1.5rem;
+  width: $sidebar-width;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 20px;
+  position: fixed;
+  top: $navbar-height;
+
+  a {
+    text-decoration: inherit;
+    color: inherit;
+  }
+
+  h1 {
+    color: black;
+    text-decoration: underline;
+    margin-top: 10px;
+    font-size: 1.2rem;
+  }
+
+  h3 {
+    color: $sidebar-class-name-color;
+    font-size: 1rem;
+  }
+
+  h4 {
+    color: $sidebar-group-name-color;
+    font-weight: lighter;
+    text-transform: uppercase;
+    margin-bottom: 0.1rem;
+    margin-top: 0.2rem;
+    font-size: 0.8rem;
+  }
+
+  li {
+    color: black;
+
+    a {
+      display: block;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  > ul, h2 {
+    margin-bottom: 1rem;
+  }
+}

@@ -1,0 +1,31 @@
+@mixin fine-bullets {
+  list-style: none;
+  padding-left: 0.6rem;
+
+  li {
+    padding-left: 0.6rem;
+    position: relative;
+
+    &:before {
+      display: inline-block;
+      content: '\2022';
+      font-size: 0.6rem;
+      width: 0.6rem;
+      position: absolute;
+      left: -0.6rem;
+      line-height: 1.7rem;
+    }
+  }
+}
+
+@mixin navbar-button {
+  color: white;
+  font-size: 20px;
+  line-height: 50px;
+  padding: 10px 20px;
+  text-decoration: none;
+
+  @media screen and (max-width: $screen-breakpoint) {
+    display: block;
+  }
+}

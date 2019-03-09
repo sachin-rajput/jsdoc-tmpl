@@ -1,0 +1,12 @@
+.changelog {
+  > p {
+    border-bottom: 1px solid $_gray;
+    margin-top: 2rem;
+    margin-bottom: 1.2rem;
+
+    > strong {
+      font-size: 1.5rem;
+      margin-right: 0.25rem;
+    }
+  }
+}

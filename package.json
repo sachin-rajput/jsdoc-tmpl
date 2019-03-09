@@ -1,0 +1,49 @@
+{
+  "name": "jsdoc-tmpl",
+  "version": "1.0.0",
+  "description": "JSDoc theme used by bookshelfjs.org, the homepage of the Bookshelf.js ORM http://bookshelfjs.org",
+  "main": "publish.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "styles": "rm -f src/styles/main.css && node-sass src/styles/main.scss static/styles/main.css",
+    "build": "npm run styles"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:bookshelf/bookshelf-jsdoc-theme.git"
+  },
+  "author": {
+    "name": "Sachin Rajput",
+    "email": "sachin.rajput@hotmail.com"
+  },
+  "contributors": [
+    {
+      "name": "Rhys van der Waerden",
+      "url": "https://github.com/rhys-vdw"
+    },
+    {
+      "name": "Ricardo Graça",
+      "email": "ricardo@devius.net"
+    }
+  ],
+  "licenses": [
+    {
+      "type": "Apache-2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/sachin-rajput/jsdoc-tmpl/issues"
+  },
+  "homepage": "https://github.com/sachin-rajput/jsdoc-tmpl",
+  "devDependencies": {
+    "font-awesome": "^4.3.0",
+    "node-sass": "^4.9.4"
+  },
+  "dependencies": {
+    "catharsis": "^0.8.7",
+    "eslint": "^5.8.0",
+    "lodash": "^4.17.11",
+    "taffydb": "https://github.com/hegemonic/taffydb/tarball/7d100bcee0e997ee4977e273cdce60bd8933050e"
+  }
+}

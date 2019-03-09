@@ -1,0 +1,14 @@
+<article class="tutorial">
+  <h2><?js= header ?></h2>
+  <section class="content"><?js= content ?></section>
+  <?js if (children.length) { ?>
+    <h3>More details about this topic on the following sections:</h3>
+    <nav>
+      <ul>
+        <?js children.forEach(function(child) { ?>
+          <li><?js= this.tutoriallink(child.name) ?></li>
+        <?js }, this); ?>
+      </ul>
+    </nav>
+  <?js } ?>
+</article>

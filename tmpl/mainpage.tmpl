@@ -1,0 +1,24 @@
+<?js
+var data = obj;
+var self = this;
+?>
+
+<?js if (data.readme) { ?>
+  <section class="readme">
+    <?js= data.readme ?>
+  </section>
+<?js } ?>
+
+<?js if (data.tutorials) { ?>
+  <section class="tutorials">
+    <?js data.tutorials.children.forEach(function(tutorial) { ?>
+        <?js= self.partial('tutorial.tmpl', tutorial) ?>
+    <?js }) ?>
+  </section>
+<?js } ?>
+
+<?js if (data.changelog) { ?>
+  <section id="changelog" class="changelog">
+    <?js= data.changelog ?>
+  </section>
+<?js } ?>

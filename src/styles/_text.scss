@@ -1,0 +1,208 @@
+.main-container {
+  @mixin fill-parent {
+    margin-left: -$method-margin;
+    margin-right: -$method-margin;
+    padding-left: $method-margin;
+    padding-right: $method-margin;
+  }
+
+  @media screen and (min-width: 651px) {
+    margin-left: $sidebar-width;
+  }
+
+  ul {
+    @include fine-bullets;
+    margin-bottom: 1rem;
+
+    ul {
+      margin-bottom: 0;
+    }
+  }
+
+  .main-column {
+    width: 100%;
+    max-width: $main-width;
+    margin: 0 auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    font-family: $sans-font-family;
+  }
+
+  .readme ul, p {
+    margin-bottom: 2rem;
+    font-family: $body-font-family;
+    color: $body-text-color;
+
+    code {
+      background-color: rgb(249, 242, 236);
+      display: inline-block;
+      border-radius: 5px;
+      padding: 0 4px;
+      text-decoration: inherit;
+    }
+  }
+
+  a {
+    color: $body-anchor-color;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline ! important;
+    }
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: $title-font-family;
+    color: $body-title-color;
+    font-weight: bold;
+
+    // Don't show anchor coloring in heading.
+    a { color: inherit; }
+  }
+
+  h1 {
+    text-transform: uppercase;
+    line-height: 1.25;
+    padding-bottom: 30px;
+    padding-top: $main-top-spacing;
+    font-size: 3.75rem;
+    letter-spacing: 0.125rem;
+    text-shadow: $title-text-shadow;
+  }
+
+  h2 {
+    font-size: 2.6rem;
+    line-height: 4rem;
+    text-shadow: $title-text-shadow;
+  }
+
+  h3 {
+    margin-bottom: 0.5rem;
+  }
+
+  h3.subsection-title {
+    color: $subsection-title-color;
+    text-transform: uppercase;
+    font-family: $title-font-family;
+    font-size: 1.7rem;
+    margin: 0 0 1.5rem 0;
+    padding-top: 0.2rem;
+    text-shadow: $title-text-shadow;
+  }
+
+  h5 {
+    font-style: italic;
+    color: $minor-heading-color;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+  }
+
+  &.api h4, .lodash-method {
+    color: $body-text-color;
+    font-family: $code-font-family;
+
+    a {
+      color: inherit;
+    }
+
+    .new, .comma, .parenthesis, .member-of, .fat-arrow, .event-on, .optional-bracket {
+      color: $function-signature-punctuation-color;
+    }
+
+    .type-signature {
+      color: $function-signature-return-type-color;
+      font-weight: normal;
+
+      a {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  // Function signature
+  &.api h4 {
+    @include fill-parent;
+    $source-link-width: 3.5rem;
+
+    position: relative;
+    display: block;
+    background-color: $function-signature-background-color;
+    margin-bottom: 1rem;
+    padding: 1rem $source-link-width 1rem 1rem;
+    font-size: 1.125rem;
+    font-weight: bold;
+    overflow: hidden;
+
+    .source-link {
+      display: block;
+      padding: 2.2rem 0.4rem 0 0.4rem;
+      position: absolute;
+      top: 0; bottom: 0; right: 0;
+      width: $source-link-width;
+      color: $function-signature-source-link-color;
+      background-color: $function-signature-background-color;
+      font-size: 0.5em;
+      line-height: 1em;
+      text-align: center;
+
+      &:before {
+        @include icon-file-code;
+        position: absolute;
+        top: 0.6rem;
+        left: 0;
+        font-size: 1.1rem;
+        font-weight: normal;
+        line-height: 1.5rem;
+        width: 100%;
+        text-align: center;
+      }
+    }
+  }
+
+  .method, .lodash-methods {
+    @include card(1);
+    margin-bottom: 3rem;
+    background-color: white;
+    padding-left: $method-margin;
+    padding-right: $method-margin;
+    padding-bottom: $method-margin;
+
+    .example {
+      @include fill-parent;
+      margin-top: -1rem;
+      background-color: $code-background-color;
+
+      h5 {
+        color: #9A9A9A;
+        margin-bottom: 0;
+        padding-top: 0.5rem;
+      }
+      pre {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+    }
+
+    &.has-description {
+      .item-description > *:last-child {
+        margin-bottom: 0;
+      }
+
+      .attributes:after {
+        content: '* * *';
+        display: block;
+        text-align: center;
+        font-family: $code-font-family;
+        font-size: 1.25rem;
+        color: $stars-color;
+        line-height: 3rem;
+      }
+    }
+  }
+
+  .lodash-methods {
+    @include fine-bullets;
+    padding-top: $method-margin;
+    padding-left: 2rem;
+  }
+}

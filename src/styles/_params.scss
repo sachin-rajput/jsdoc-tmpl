@@ -1,0 +1,43 @@
+.attributes {
+  $indentation: 25px;
+
+  > ul {
+    list-style: none;
+  }
+
+  .fired-event-item code {
+    color: $param-type-color;
+  }
+
+  .param-desc, .description {
+    display: block;
+    padding-left: 1.7rem;
+
+    p {
+      font-family: $sans-font-family;
+      margin-bottom: 0;
+    }
+
+    // Add bullets to child lists.
+    ul.params {
+      @include fine-bullets;
+    }
+  }
+
+  ul.params {
+    list-style: none;
+    padding-left: 0;
+    .param {
+      font-weight: bold;
+      margin-right: 0.3rem;
+    }
+  }
+
+  // Color code stuffs.
+  .optional-bracket { color: $param-punctuation-color; }
+  .name             { color: $param-name-color; }
+  .default-value    { color: $param-default-color; }
+  .type-or,
+  .param-type       { color: $param-type-color; font-weight: normal; }
+  .default-equals   { color: $param-punctuation-color; }
+}

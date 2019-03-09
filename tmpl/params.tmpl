@@ -1,0 +1,77 @@
+<?js
+    var params = obj;
+
+    /* sort subparams under their parent params (like opts.classname) */
+    var parentParam = null;
+    params.forEach(function(param, i) {
+        var paramRegExp;
+
+        if (!param) {
+            return;
+        }
+
+        if (parentParam && parentParam.name && param.name) {
+            paramRegExp = new RegExp('^(?:' + parentParam.name + '(?:\\[\\])*)\\.(.+)$');
+
+            if ( paramRegExp.test(param.name) ) {
+                param.name = RegExp.$1;
+                parentParam.subparams = parentParam.subparams || [];
+                parentParam.subparams.push(param);
+                params[i] = null;
+            }
+            else {
+                parentParam = param;
+            }
+        }
+        else {
+            parentParam = param;
+        }
+    });
+
+    /* determine if we need extra columns, "attributes" and "default" */
+    params.hasAttributes = false;
+    params.hasDefault = false;
+    params.hasName = false;
+
+    params.forEach(function(param) {
+        if (!param) { return; }
+
+        if (param.optional || param.nullable || param.variable) {
+            params.hasAttributes = true;
+        }
+
+        if (param.name) {
+            params.hasName = true;
+        }
+
+        if (typeof param.defaultvalue !== 'undefined') {
+            params.hasDefault = true;
+        }
+    });
+?>
+
+<ul class="params">
+  <?js
+      var self = this;
+      params.forEach(function(param) {
+          if (!param) { return; }
+  ?>
+    <li>
+      <code class="param"><?js= self.updateItemName(param, {default: true}) ?></code>
+
+      <?js if (param.type && param.type.names) {?>
+          <code class="param-type"><span class="param-type"
+            ><?js= self.partial('type.tmpl', param.type.names)
+          ?></span></code>
+      <?js } ?>
+
+      <div class="description">
+        <?js= param.description ?>
+        <?js if (param.subparams) { ?>
+          <?js= self.partial('params.tmpl', param.subparams) ?>
+        <?js } ?>
+      </div>
+
+    </li>
+  <?js }); ?>
+</ul>
